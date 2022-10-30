@@ -1,7 +1,6 @@
 package com.example.Plant.Distribution.controller;
 
 import com.example.Plant.Distribution.exception.ResourceNotFoundException;
-import com.example.Plant.Distribution.model.Farmer;
 import com.example.Plant.Distribution.model.Plant;
 import com.example.Plant.Distribution.repository.PlantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
