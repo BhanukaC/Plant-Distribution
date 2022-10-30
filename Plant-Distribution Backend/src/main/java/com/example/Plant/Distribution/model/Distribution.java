@@ -1,17 +1,14 @@
 package com.example.Plant.Distribution.model;
-
-import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.data.annotation.CreatedDate;
-import org.springframework.lang.Nullable;
-
 import javax.persistence.*;
 import java.util.Date;
+
+
+
 
 @Getter
 @Setter
@@ -25,9 +22,7 @@ public class Distribution {
     private long id;
 
 
-
     @CreatedDate
-    @Column(nullable = false)
     private Date date;
     private double count;
 
@@ -35,16 +30,10 @@ public class Distribution {
     private String center;
 
 
-
-    @ManyToOne(cascade= CascadeType.ALL)
-    @JoinColumn(name = "farmerId",nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    private Farmer farmer;
+    private long farmerId;
+    private long plantId;
 
 
 
-    @ManyToOne(cascade= CascadeType.ALL)
-    @JoinColumn(name = "plantId",nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    private Plant plant;
+
 }

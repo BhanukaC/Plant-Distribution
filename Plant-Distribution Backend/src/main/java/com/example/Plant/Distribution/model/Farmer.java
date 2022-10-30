@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Set;
+
 
 @Getter
 @Setter
@@ -38,6 +38,5 @@ public class Farmer {
     @Column(nullable = false)
     private double areaOfCropland;
 
-    @OneToMany(fetch = FetchType.EAGER,mappedBy="farmer",cascade = CascadeType.ALL,orphanRemoval = true)
-    private Set<Distribution> distribution;
+
 }

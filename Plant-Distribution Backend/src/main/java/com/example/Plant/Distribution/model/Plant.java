@@ -32,8 +32,6 @@ public class Plant {
     @Column(nullable = false)
     private double count;
 
-    @OneToMany(fetch = FetchType.EAGER,mappedBy="plant",cascade = CascadeType.ALL,orphanRemoval = true)
-    private Set<Distribution> distribution;
 
 
 }
