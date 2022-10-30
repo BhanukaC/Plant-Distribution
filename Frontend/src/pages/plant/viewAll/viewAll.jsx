@@ -1,7 +1,7 @@
 import "./viewAll.scss";
 import Navbar from "../../../components/navbar/Navbar";
 import Sidebar from "../../../components/sidebar/Sidebar";
-import Datatable from "../../../components/otRecordTable/Datatable";
+import Datatable from "../../../components/distributionRecordTable/Datatable";
 
 const ViewAllOtRecords = () => {
   //console.log(EID);

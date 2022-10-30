@@ -1,7 +1,7 @@
 import "./viewAll.scss";
 import Navbar from "../../../components/navbar/Navbar";
 import Sidebar from "../../../components/sidebar/Sidebar";
-import Datatable from "../../../components/otTypeTable/Datatable";
+import Datatable from "../../../components/plantTable/Datatable";
 
 const ViewAllOtTypes = () => {
   return (
