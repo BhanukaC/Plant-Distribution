@@ -29,6 +29,8 @@ public class Distribution {
     @Column(nullable = false)
     private String center;
 
+    private String userName;
+
 
     private long farmerId;
     private long plantId;
