@@ -22,7 +22,7 @@ public class Distribution {
     private long id;
 
 
- 
+
     private Date date;
     private double count;
 
