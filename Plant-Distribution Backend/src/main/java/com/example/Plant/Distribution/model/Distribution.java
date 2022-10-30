@@ -22,7 +22,7 @@ public class Distribution {
     private long id;
 
 
-    @CreatedDate
+ 
     private Date date;
     private double count;
 
