@@ -1,14 +1,27 @@
-import "./add.scss";
-import { useState } from "react";
+import "./edit.scss";
+import { useState, useEffect } from "react";
 import Navbar from "../../../components/navbar/Navbar";
 import Sidebar from "../../../components/sidebar/Sidebar";
 import axios from "axios";
+import { useParams } from "react-router-dom";
+import moment from "moment";
 
-const AddPlant = () => {
+const EditPlant = () => {
   const [name, setName] = useState("");
   const [type, setType] = useState("");
   const [price, setPrice] = useState(0);
   const [count, setCount] = useState(0);
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    axios.get("http://localhost:8080/api/plant/getSingle/" + id).then((res) => {
+      setName(res.data.plantName);
+      setPrice(res.data.price);
+      setType(res.data.type);
+      setCount(res.data.count);
+    });
+  }, [""]);
 
   const submitForm = (e) => {
     e.preventDefault();
@@ -22,19 +35,21 @@ const AddPlant = () => {
         count: count,
       };
 
-      axios.post("http://localhost:8080/api/plant/add", data).then((res) => {
-        if (res.status === 200) {
-          alert("Plant Added");
+      axios
+        .put("http://localhost:8080/api/plant/update/" + id, data)
+        .then((res) => {
+          if (res.status === 200) {
+            alert("Plant Updated");
 
-          setName("");
-          setType("");
-          setPrice(0);
-          setCount(0);
-        } else {
-          console.log(res.status);
-          alert("Sorry,Try again");
-        }
-      });
+            setName("");
+            setType("");
+            setPrice(0);
+            setCount(0);
+          } else {
+            console.log(res.status);
+            alert("Sorry,Try again");
+          }
+        });
     }
   };
 
@@ -102,7 +117,7 @@ const AddPlant = () => {
               </div>
 
               <div className="break"></div>
-              <button onClick={submitForm}>Add</button>
+              <button onClick={submitForm}>Update</button>
             </form>
           </div>
         </div>
@@ -111,4 +126,4 @@ const AddPlant = () => {
   );
 };
 
-export default AddPlant;
+export default EditPlant;

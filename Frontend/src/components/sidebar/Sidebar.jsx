@@ -46,14 +46,14 @@ const Sidebar = () => {
           <Link to="/plant/add" style={{ textDecoration: "none" }}>
             <li>
               <AddIcon className="icon" />
-              <span>Add OT Type</span>
+              <span>Add Plant</span>
             </li>
           </Link>
 
           <Link to="/plant/viewall" style={{ textDecoration: "none" }}>
             <li>
               <PreviewIcon className="icon" />
-              <span>View All OT Types</span>
+              <span>View All Plants</span>
             </li>
           </Link>
 
@@ -61,13 +61,13 @@ const Sidebar = () => {
           <Link to="/distribution/add" style={{ textDecoration: "none" }}>
             <li>
               <AddIcon className="icon" />
-              <span>Add OT Record</span>
+              <span>Add Distribution Record</span>
             </li>
           </Link>
           <Link to="/distribution/viewall" style={{ textDecoration: "none" }}>
             <li>
               <PreviewIcon className="icon" />
-              <span>View All OT Records</span>
+              <span>View All Distribution Records</span>
             </li>
           </Link>
         </ul>

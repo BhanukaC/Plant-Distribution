@@ -1,11 +1,11 @@
-import AddEmployee from "./pages/farmer/add/add"
-import ViewAllEmployees from "./pages/farmer/viewAll/viewAll";
-import EditEmployee from "./pages/farmer/edit/edit";
-import AddOtType from "./pages/distribution/add/add";
-import ViewAllOtTypes from "./pages/distribution/viewAll/viewAll";
-import EditOtType from "./pages/distribution/edit/edit";
-import AddOtRecord from "./pages/plant/add/add";
-import ViewAllOtRecords from "./pages/plant/viewAll/viewAll";
+import AddFarmer from "./pages/farmer/add/add"
+import ViewAllEFarmers from "./pages/farmer/viewAll/viewAll";
+import EditFarmer from "./pages/farmer/edit/edit";
+import AddPlant from "./pages/plant/add/add";
+import ViewAllPlants from "./pages/plant/viewAll/viewAll";
+import EditPlant from "./pages/plant/edit/edit";
+// import AddOtRecord from "./pages/plant/add/add";
+// import ViewAllOtRecords from "./pages/plant/viewAll/viewAll";
 
 
 
@@ -27,27 +27,27 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/">
-            <Route index element={<AddEmployee />} />
-            <Route path="farmer">
-              <Route path="add" element={<AddEmployee />} />
-              <Route path="viewall" element={<ViewAllEmployees />} />
-              <Route path="edit/:id" element={<EditEmployee />} />
+            <Route index element={<AddFarmer />} />
+            <Route path="Farmer" >
+              <Route path="add" element={<AddFarmer />} />
+              <Route path="viewall" element={<ViewAllEFarmers />} />
+              <Route path="edit/:id" element={<EditFarmer />} />
             </Route>
 
             <Route path="plant">
-              <Route path="add" element={<AddOtType />} />
-              <Route path="viewall/" element={<ViewAllOtTypes />} />
-              <Route path="edit/:otID" element={<EditOtType />} />
+              <Route path="add" element={<AddPlant />} />
+              <Route path="viewall/" element={<ViewAllPlants />} />
+              <Route path="edit/:id" element={<EditPlant />} />
             </Route>
-            <Route path="distribution">
+
+            {/* <Route path="distribution">
               <Route path="add" element={<AddOtRecord />} />
               <Route path="viewall/" element={<ViewAllOtRecords />} />
-
-            </Route>
+            </Route> */}
           </Route>
         </Routes>
       </BrowserRouter>
-    </div>
+    </div >
   );
 }
 

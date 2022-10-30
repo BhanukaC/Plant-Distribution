@@ -6,44 +6,55 @@ import axios from "axios";
 import moment from "moment";
 
 const userColumns = [
-  { field: "otID", headerName: "otID" },
-  { field: "type", headerName: "Type", width: 100 },
-  { field: "payPerHour", headerName: "Pay Per Hour" },
+  { field: "id", headerName: "ID" },
+  { field: "plantName", headerName: "plant Name" },
+  { field: "type", headerName: "type", width: 130 },
+  { field: "price", headerName: "price", width: 130 },
+  { field: "count", headerName: "count", width: 130 },
 ];
 
-const Datatable = (props) => {
+const Datatable = () => {
   const [data, setData] = useState({});
 
+  const handleDelete = (id) => {
+    let isExecuted = window.confirm("Are you sure ?");
+    if (isExecuted) {
+      setData(data.filter((item) => item.id !== id));
+      axios.delete("http://localhost:8080/api/plant/delete/" + id);
+    }
+  };
+
   useEffect(() => {
-    axios
-      .get("https://erp-system-nexeyo.herokuapp.com/hr/otType/getAll", {
-        withCredentials: true,
-        credentials: "include",
-      })
-      .then((res) => {
-        // console.log(res);
-        let dt = res.data.map((d) => {
-          return {
-            id: d.otID,
-            ...d,
-          };
-        });
-        setData(dt);
+    axios.get("http://localhost:8080/api/plant/getAll").then((res) => {
+      let dt = res.data.map((d) => {
+        return {
+          ...d,
+        };
       });
+      setData(res.data);
+      // console.log(dt);
+    });
   }, [""]);
 
   const actionColumn = [
     {
       field: "action",
       headerName: "Action",
-      width: 100,
+      width: 710,
       renderCell: (params) => {
-        const reLink = "/hr/otType/edit/" + params.row.otID;
+        const reLink = "/plant/edit/" + params.row.id;
+
         return (
           <div className="cellAction">
             <Link to={reLink} style={{ textDecoration: "none" }}>
               <div className="viewButton">Edit</div>
             </Link>
+            <div
+              className="deleteButton"
+              onClick={() => handleDelete(params.row.id)}
+            >
+              Delete
+            </div>
           </div>
         );
       },
@@ -52,7 +63,7 @@ const Datatable = (props) => {
   return (
     <div className="datatable" style={{ height: "78%" }}>
       <div className="dataTableTitle1">
-        <h1>All OT Types</h1>
+        <h1>All Plants</h1>
       </div>
       <DataGrid
         className="datagrid"

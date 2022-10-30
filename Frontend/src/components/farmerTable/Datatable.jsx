@@ -15,27 +15,6 @@ const userColumns = [
   { field: "type", headerName: "Working Type", width: 130 },
 ];
 
-const salaryButton = [
-  {
-    field: "ViewSalaries",
-    headerName: "",
-    renderCell: getViewSalaryButton,
-    width: 150,
-  },
-];
-function getViewSalaryButton(params) {
-  const reLink5 = "/hr/salary/viewall/" + params.row.EID;
-  if (params.row.dailyWage === null) {
-    return (
-      <div className="cellAction">
-        <Link to={reLink5} style={{ textDecoration: "none" }}>
-          <div className="viewButton">View All Salaries</div>
-        </Link>
-      </div>
-    );
-  }
-}
-
 const Datatable = () => {
   const [data, setData] = useState({});
 
@@ -91,7 +70,7 @@ const Datatable = () => {
       <DataGrid
         className="datagrid"
         rows={data}
-        columns={userColumns.concat(actionColumn).concat(salaryButton)}
+        columns={userColumns.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}
         components={{ Toolbar: GridToolbar }}

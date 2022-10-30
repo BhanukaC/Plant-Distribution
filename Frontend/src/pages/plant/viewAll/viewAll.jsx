@@ -1,10 +1,9 @@
 import "./viewAll.scss";
 import Navbar from "../../../components/navbar/Navbar";
 import Sidebar from "../../../components/sidebar/Sidebar";
-import Datatable from "../../../components/distributionRecordTable/Datatable";
+import Datatable from "../../../components/plantTable/Datatable";
 
-const ViewAllOtRecords = () => {
-  //console.log(EID);
+const ViewAllPlants = () => {
   return (
     <div className="list">
       <Sidebar />
@@ -16,4 +15,4 @@ const ViewAllOtRecords = () => {
   );
 };
 
-export default ViewAllOtRecords;
+export default ViewAllPlants;

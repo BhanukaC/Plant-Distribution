@@ -4,7 +4,7 @@ import Navbar from "../../../components/navbar/Navbar";
 import Sidebar from "../../../components/sidebar/Sidebar";
 import axios from "axios";
 
-const AddEmployee = () => {
+const AddFarmer = () => {
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [NIC, setNIC] = useState("");
@@ -144,4 +144,4 @@ const AddEmployee = () => {
   );
 };
 
-export default AddEmployee;
+export default AddFarmer;

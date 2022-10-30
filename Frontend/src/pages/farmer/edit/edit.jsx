@@ -6,7 +6,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import moment from "moment";
 
-const EditEmployee = () => {
+const EditFarmer = () => {
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [NIC, setNIC] = useState("");
@@ -163,4 +163,4 @@ const EditEmployee = () => {
   );
 };
 
-export default EditEmployee;
+export default EditFarmer;

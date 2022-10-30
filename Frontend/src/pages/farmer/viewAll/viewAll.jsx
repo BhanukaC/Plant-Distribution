@@ -3,7 +3,7 @@ import Navbar from "../../../components/navbar/Navbar";
 import Sidebar from "../../../components/sidebar/Sidebar";
 import Datatable from "../../../components/farmerTable/Datatable";
 
-const ViewAllEmployees = () => {
+const ViewAllFarmers = () => {
   return (
     <div className="list">
       <Sidebar />
@@ -15,4 +15,4 @@ const ViewAllEmployees = () => {
   );
 };
 
-export default ViewAllEmployees;
+export default ViewAllFarmers;
