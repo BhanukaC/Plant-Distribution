@@ -35,6 +35,9 @@ public class Distribution {
     private long farmerId;
     private long plantId;
 
+    private double total;
+    private double pricePerUnit;
+
 
 
 

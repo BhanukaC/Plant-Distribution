@@ -12,6 +12,8 @@ const userColumns = [
   { field: "userName", headerName: "User Name" },
   { field: "center", headerName: "Center" },
   { field: "count", headerName: "Count" },
+  { field: "pricePerUnit", headerName: "price Per Unit" },
+  { field: "total", headerName: "Total" },
   { field: "modifiedDate", headerName: "Date" },
 ];
 
