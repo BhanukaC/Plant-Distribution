@@ -76,7 +76,7 @@ const EditFarmer = () => {
       <div className="newContainer">
         <Navbar />
         <div className="topContainer">
-          <h1>Add Farmer</h1>
+          <h1>Edit Farmer</h1>
         </div>
         <div className="bottomContainer">
           <div className="right">

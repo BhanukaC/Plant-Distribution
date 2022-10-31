@@ -44,7 +44,7 @@ const AddPlant = () => {
       <div className="newContainer">
         <Navbar />
         <div className="topContainer">
-          <h1>Add Farmer</h1>
+          <h1>Add Plant</h1>
         </div>
         <div className="bottomContainer">
           <div className="right">
