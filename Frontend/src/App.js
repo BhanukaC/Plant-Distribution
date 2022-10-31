@@ -4,8 +4,8 @@ import EditFarmer from "./pages/farmer/edit/edit";
 import AddPlant from "./pages/plant/add/add";
 import ViewAllPlants from "./pages/plant/viewAll/viewAll";
 import EditPlant from "./pages/plant/edit/edit";
-// import AddOtRecord from "./pages/plant/add/add";
-// import ViewAllOtRecords from "./pages/plant/viewAll/viewAll";
+import AddDistribution from "./pages/distribution/add/add";
+import ViewAllDistributions from "./pages/distribution/viewAll/viewAll";
 
 
 
@@ -40,10 +40,10 @@ function App() {
               <Route path="edit/:id" element={<EditPlant />} />
             </Route>
 
-            {/* <Route path="distribution">
-              <Route path="add" element={<AddOtRecord />} />
-              <Route path="viewall/" element={<ViewAllOtRecords />} />
-            </Route> */}
+            <Route path="distribution">
+              <Route path="add" element={<AddDistribution />} />
+              <Route path="viewall/" element={<ViewAllDistributions />} />
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>

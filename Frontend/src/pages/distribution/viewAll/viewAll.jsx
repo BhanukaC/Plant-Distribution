@@ -1,9 +1,9 @@
 import "./viewAll.scss";
 import Navbar from "../../../components/navbar/Navbar";
 import Sidebar from "../../../components/sidebar/Sidebar";
-import Datatable from "../../../components/plantTable/Datatable";
+import Datatable from "../../../components/distributionRecordTable/Datatable";
 
-const ViewAllOtTypes = () => {
+const ViewAllDistributions = () => {
   return (
     <div className="list">
       <Sidebar />
@@ -15,4 +15,4 @@ const ViewAllOtTypes = () => {
   );
 };
 
-export default ViewAllOtTypes;
+export default ViewAllDistributions;
