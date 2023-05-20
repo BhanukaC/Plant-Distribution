@@ -37,7 +37,7 @@ public class PlantController {
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<Plant> updateFarmer(@PathVariable long id,@RequestBody Plant plant){
+    public ResponseEntity<Plant> updatePlant(@PathVariable long id,@RequestBody Plant plant){
         Plant updatedPlant=plantRepository.findById(id).orElseThrow(
                 ()->new ResourceNotFoundException("Plant not exist with id: "+id)
         );
